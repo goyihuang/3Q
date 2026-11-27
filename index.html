@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>動物三國・無雙亂舞</title>
+<link rel="icon" href="assets/unit_hero_0001.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+
+<div id="loading" class="screen show"><div class="load-box"><div class="logo small">動物三國</div><div id="loadText">載入中…</div></div></div>
+
+<div id="title" class="screen">
+  <div class="title-wrap">
+    <div class="logo">動物三國<span>無雙亂舞</span></div>
+    <div class="sub">ANIMAL THREE KINGDOMS ・ ONE VS ONE THOUSAND</div>
+    <button id="btnStart" class="btn big">開始遊戲</button>
+    <div class="howto">
+      <b>操作</b>　移動 <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>　普攻 <kbd>J</kbd>　蓄力 <kbd>K</kbd>　衝刺 <kbd>空白</kbd>　無雙 <kbd>L</kbd>　暫停 <kbd>Esc</kbd><br>
+      手機可用畫面上的搖桿與按鈕
+    </div>
+  </div>
+</div>
+
+<div id="select" class="screen">
+  <div class="sel-head">選擇武將</div>
+  <div id="selInfo">
+    <div id="selTitle"></div>
+    <div id="selName"></div>
+    <div id="selWeapon"></div>
+    <div id="selDesc"></div>
+    <div class="stats">
+      <div>體力<i><b id="stHp"></b></i></div>
+      <div>攻擊<i><b id="stAtk"></b></i></div>
+      <div>速度<i><b id="stSpd"></b></i></div>
+    </div>
+    <button id="btnGo" class="btn big">出陣！</button>
+    <button id="btnBack" class="btn small ghost">返回</button>
+  </div>
+  <div id="grid"></div>
+</div>
+
+<div id="hud" class="hidden">
+  <div id="pbox">
+    <img id="pface">
+    <div class="pbars">
+      <div id="pname"></div>
+      <div class="bar hp"><b id="hpFill"></b><span id="hpText"></span></div>
+      <div class="bar mu"><b id="muFill"></b><span id="muText">無雙</span></div>
+    </div>
+  </div>
+  <div id="ko"><span id="koNum">0</span><small>擊破</small></div>
+  <div id="timer">00:00</div>
+  <div id="objective"></div>
+  <div id="combo"><span id="comboNum">0</span><small>HITS</small></div>
+  <div id="bossBar" class="hidden"><div id="bossName"></div><div class="bar boss"><b id="bossFill"></b></div></div>
+  <canvas id="minimap" width="160" height="160"></canvas>
+  <button id="btnPause" class="iconbtn">❚❚</button>
+  <button id="btnMute" class="iconbtn">♪</button>
+</div>
+
+<div id="banner"></div>
+<div id="flash"></div>
+<div id="nums"></div>
+
+<div id="touch" class="hidden">
+  <div id="stick"><div id="knob"></div></div>
+  <div id="tbtns">
+    <button data-k="atk" class="tb a">攻</button>
+    <button data-k="heavy" class="tb b">蓄</button>
+    <button data-k="dash" class="tb c">閃</button>
+    <button data-k="musou" class="tb d">無雙</button>
+  </div>
+</div>
+
+<div id="pause" class="screen">
+  <div class="panel">
+    <div class="ptitle">暫停</div>
+    <button id="btnResume" class="btn">繼續</button>
+    <button id="btnQuit" class="btn ghost">回到選角</button>
+  </div>
+</div>
+
+<div id="result" class="screen">
+  <div class="panel">
+    <div id="resTitle" class="ptitle"></div>
+    <div id="resRank"></div>
+    <div id="resStats"></div>
+    <button id="btnAgain" class="btn">再戰一次</button>
+    <button id="btnSel" class="btn ghost">選擇其他武將</button>
+  </div>
+</div>
+
+<script type="module" src="js/game.js"></script>
+</body>
+</html>
